@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Votante} from './votante.model';
 
 @model()
 export class TipoDocumento extends Entity {
@@ -21,6 +22,8 @@ export class TipoDocumento extends Entity {
   })
   abreviatura: string;
 
+  @hasMany(() => Votante)
+  votantes: Votante[];
 
   constructor(data?: Partial<TipoDocumento>) {
     super(data);

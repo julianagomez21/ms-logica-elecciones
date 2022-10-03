@@ -9,6 +9,15 @@ export class BloqueVotante extends Entity {
   })
   id?: number;
 
+  @property({
+    type: 'number',
+  })
+  bloqueId?: number;
+
+  @property({
+    type: 'number',
+  })
+  votanteId?: number;
 
   constructor(data?: Partial<BloqueVotante>) {
     super(data);

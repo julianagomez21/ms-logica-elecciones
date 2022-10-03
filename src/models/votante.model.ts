@@ -1,4 +1,7 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
+import {TipoDocumento} from './tipo-documento.model';
+import {Bloque} from './bloque.model';
+import {BloqueVotante} from './bloque-votante.model';
 
 @model()
 export class Votante extends Entity {
@@ -54,6 +57,11 @@ export class Votante extends Entity {
   })
   hash?: string;
 
+  @belongsTo(() => TipoDocumento)
+  tipoDocumentoId: number;
+
+  @hasMany(() => Bloque, {through: {model: () => BloqueVotante}})
+  bloques: Bloque[];
 
   constructor(data?: Partial<Votante>) {
     super(data);

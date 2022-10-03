@@ -26,7 +26,7 @@ export class BloqueVotanteController {
     public bloqueVotanteRepository : BloqueVotanteRepository,
   ) {}
 
-  @post('/bloque-votante')
+  @post('/bloque-votantes')
   @response(200, {
     description: 'BloqueVotante model instance',
     content: {'application/json': {schema: getModelSchemaRef(BloqueVotante)}},
@@ -47,7 +47,7 @@ export class BloqueVotanteController {
     return this.bloqueVotanteRepository.create(bloqueVotante);
   }
 
-  @get('/bloque-votante/count')
+  @get('/bloque-votantes/count')
   @response(200, {
     description: 'BloqueVotante model count',
     content: {'application/json': {schema: CountSchema}},
@@ -58,7 +58,7 @@ export class BloqueVotanteController {
     return this.bloqueVotanteRepository.count(where);
   }
 
-  @get('/bloque-votante')
+  @get('/bloque-votantes')
   @response(200, {
     description: 'Array of BloqueVotante model instances',
     content: {
@@ -76,7 +76,7 @@ export class BloqueVotanteController {
     return this.bloqueVotanteRepository.find(filter);
   }
 
-  @patch('/bloque-votante')
+  @patch('/bloque-votantes')
   @response(200, {
     description: 'BloqueVotante PATCH success count',
     content: {'application/json': {schema: CountSchema}},
@@ -95,7 +95,7 @@ export class BloqueVotanteController {
     return this.bloqueVotanteRepository.updateAll(bloqueVotante, where);
   }
 
-  @get('/bloque-votante/{id}')
+  @get('/bloque-votantes/{id}')
   @response(200, {
     description: 'BloqueVotante model instance',
     content: {
@@ -111,7 +111,7 @@ export class BloqueVotanteController {
     return this.bloqueVotanteRepository.findById(id, filter);
   }
 
-  @patch('/bloque-votante/{id}')
+  @patch('/bloque-votantes/{id}')
   @response(204, {
     description: 'BloqueVotante PATCH success',
   })
@@ -129,7 +129,7 @@ export class BloqueVotanteController {
     await this.bloqueVotanteRepository.updateById(id, bloqueVotante);
   }
 
-  @put('/bloque-votante/{id}')
+  @put('/bloque-votantes/{id}')
   @response(204, {
     description: 'BloqueVotante PUT success',
   })
@@ -140,7 +140,7 @@ export class BloqueVotanteController {
     await this.bloqueVotanteRepository.replaceById(id, bloqueVotante);
   }
 
-  @del('/bloque-votante/{id}')
+  @del('/bloque-votantes/{id}')
   @response(204, {
     description: 'BloqueVotante DELETE success',
   })

@@ -9,6 +9,15 @@ export class BloqueCargo extends Entity {
   })
   id?: number;
 
+  @property({
+    type: 'number',
+  })
+  bloqueId?: number;
+
+  @property({
+    type: 'number',
+  })
+  cargoId?: number;
 
   constructor(data?: Partial<BloqueCargo>) {
     super(data);
