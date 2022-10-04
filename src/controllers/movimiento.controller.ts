@@ -1,30 +1,26 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
-  put,
-  del,
-  requestBody,
-  response,
+  del, get,
+  getModelSchemaRef, param, patch, post, put, requestBody,
+  response
 } from '@loopback/rest';
 import {Movimiento} from '../models';
 import {MovimientoRepository} from '../repositories';
 
+@authenticate("admin")
 export class MovimientoController {
   constructor(
     @repository(MovimientoRepository)
-    public movimientoRepository : MovimientoRepository,
-  ) {}
+    public movimientoRepository: MovimientoRepository,
+  ) { }
 
   @post('/movimiento')
   @response(200, {
@@ -58,6 +54,7 @@ export class MovimientoController {
     return this.movimientoRepository.count(where);
   }
 
+  @authenticate.skip()
   @get('/movimiento')
   @response(200, {
     description: 'Array of Movimiento model instances',

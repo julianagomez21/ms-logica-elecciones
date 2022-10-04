@@ -1,8 +1,15 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
 import {Movimiento} from './movimiento.model';
 import {Plancha} from './plancha.model';
 
-@model()
+@model({
+  settings: {
+    foreignKeys: {
+
+    }
+  }
+})
+
 export class Candidato extends Entity {
   @property({
     type: 'number',
