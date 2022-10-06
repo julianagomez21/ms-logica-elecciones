@@ -25,6 +25,7 @@ export class AdminAuthorizationStrategy implements AuthenticationStrategy {
         let perfil: UserProfile = Object.assign({
           admin: 'OK'
         });
+
         return perfil;
       } else {
         throw new HttpErrors[401]("Solicitud rechazada porque el token enviado no es valido.");
