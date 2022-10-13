@@ -22,3 +22,4 @@ export * from './cargo-plancha.controller';
 export * from './cargo-eleccion.controller';
 export * from './eleccion-cargo.controller';
 export * from './cargo-bloque.controller';
+export * from './archivos.controller';
